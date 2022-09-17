@@ -1,0 +1,67 @@
+﻿@*@model IEnumerable<WebApplication1.Entities.Employee>*@
+@*
+
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index 2</title>
+
+</head>
+<body>
+
+    @foreach(var item in Model)
+    {
+        <div>
+            <h1>Firstname : @item.Firstname</h1>
+            <h1>Surname @item.Lastname</h1>
+            <div>
+                <span>User ID : @item.Id</span>
+            </div>
+            <hr/>
+            <hr/>
+        </div>
+    }
+
+</body>
+</html>*@
+
+
+
+
+@model WebApplication1.Models.EmployeeListViewModel
+
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index 2</title>
+
+</head>
+<body>
+
+    @foreach(var item in Model.Employees)
+    {
+        <div>
+            <h1>Firstname : @item.Firstname</h1>
+            <h1>Surname @item.Lastname</h1>
+            <div>
+                <span>User ID : @item.Id</span>
+            </div>
+            <hr/>
+            <hr/>
+        </div>
+    }
+
+
+    <hr />
+    <h1>Cities</h1>
+    @foreach(var item in Model.Cities)
+    {
+        <div>
+            <h2>@item</h2>
+        </div>
+    }
+</body>
+</html>
