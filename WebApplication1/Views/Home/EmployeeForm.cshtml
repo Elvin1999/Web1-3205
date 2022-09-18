@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index 2</title>
+
+</head>
+<body>
+
+    <h1  style="color:springgreen;" >Hello from Index 2 page</h1>
+
+    @using (Html.BeginForm("Index10","Home"))
+    {
+        <b>Key : </b>
+        @Html.TextBox("key");
+        <input type="submit" value="Search"  />
+    }
+
+
+</body>
+</html>

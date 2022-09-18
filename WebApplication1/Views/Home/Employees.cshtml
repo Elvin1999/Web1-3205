@@ -3,36 +3,38 @@
 
 
     <!DOCTYPE html>
-<html>
+    <html>
 
-<head>
+    <head>
     <title>Index 2</title>
 
-</head>
-<body>
+    </head>
+    <body>
 
     @foreach(var item in Model)
     {
-        <div>
-            <h1>Firstname : @item.Firstname</h1>
-            <h1>Surname @item.Lastname</h1>
-            <div>
-                <span>User ID : @item.Id</span>
-            </div>
-            <hr/>
-            <hr/>
-        </div>
+    <div>
+    <h1>Firstname : @item.Firstname</h1>
+    <h1>Surname @item.Lastname</h1>
+    <div>
+    <span>User ID : @item.Id</span>
+    </div>
+    <hr/>
+    <hr/>
+    </div>
     }
 
-</body>
-</html>*@
+    </body>
+    </html>*@
 
 
 
 
 @model WebApplication1.Models.EmployeeListViewModel
 
-    <!DOCTYPE html>
+
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -41,27 +43,100 @@
 </head>
 <body>
 
-    @foreach(var item in Model.Employees)
+
+    @using (Html.BeginForm())
     {
-        <div>
-            <h1>Firstname : @item.Firstname</h1>
-            <h1>Surname @item.Lastname</h1>
-            <div>
-                <span>User ID : @item.Id</span>
-            </div>
-            <hr/>
-            <hr/>
-        </div>
+        <input type="text" id="" name=""  />
+        
+        <button type="submit" >Submit </button>
+
     }
+    
+
+   @* <table>
+
+        <thead>
+            <tr>
+                <th>Id</th>
+
+                <th>Firstname</th>
+
+                <th>Lastname</th>
+
+                <th>City Id</th>
+            </tr>
+        </thead>
 
 
-    <hr />
-    <h1>Cities</h1>
-    @foreach(var item in Model.Cities)
-    {
-        <div>
-            <h2>@item</h2>
-        </div>
-    }
+        <tbody>
+            @{
+                var color = "";
+            }
+            @foreach (var item in Model.Employees)
+            {
+
+                @if (item.Id % 2 != 0)
+                {
+                    color ="red";
+                }
+                else
+                {
+                    color ="green";
+                }
+                <tr style="background-color:@color">
+                    <td>@item.Id</td>
+                    <td>@item.Firstname</td>
+                    <td>@item.Lastname</td>
+                    <td>@item.CityId</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <footer>
+
+        @try
+        {
+            throw new NullReferenceException("Data bosh gonderildi");
+        }
+        catch(Exception ex)
+        {
+            <h1 style="color:red;" >@ex.Message</h1>
+        }
+
+       @* @for(int i = 0; i < Model.Employees.Count; i++)
+        {
+            <h1>@Model.Employees[i].Firstname</h1>
+        }
+
+        this site www.mysite.com
+        <br />
+        Email : elvincamalzade@gmail.com
+        I am @@home
+
+        <p>
+
+        Current date : @DateTime.Now.ToLongDateString()
+        </p>
+
+        <p>
+            3 days ago was @{
+                var difference=DateTime.Now - TimeSpan.FromDays(3);
+            };
+            @difference
+        </p>
+        @(DateTime.Now - TimeSpan.FromDays(3))
+
+        @{
+            var number = 100;
+        }
+
+        <bold>Number is @number</bold>
+
+        
+    </footer>
+        *@
+
 </body>
 </html>

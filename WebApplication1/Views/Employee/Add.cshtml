@@ -1,0 +1,36 @@
+﻿
+
+
+@model WebApplication1.Models.EmployeeAddViewModel;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add</title>
+
+</head>
+<body>
+
+    <form asp-controller="Employee" asp-action="Add">
+        <label asp-for="Employee.Id">  </label> <input asp-for="Employee.Id" />
+        <span asp-validation-for="Employee.Id" >  </span>
+
+         <label asp-for="Employee.Firstname">  </label> <input asp-for="Employee.Firstname" />
+        <span asp-validation-for="Employee.Firstname" >  </span>
+
+         <label asp-for="Employee.Lastname">  </label> <input asp-for="Employee.Lastname" />
+        <span asp-validation-for="Employee.Lastname" >  </span>
+
+        <label asp-for="Employee.CityId">  </label> <select asp-for="Employee.CityId" asp-items="Model.Cities" ></select>
+        <button type="submit" >Add</button>
+        
+    </form>
+
+
+</body>
+</html>
